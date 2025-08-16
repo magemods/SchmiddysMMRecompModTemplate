@@ -11,7 +11,11 @@ include_directories("./include/extlib")
 include_directories("./include/shared")
 include_directories("./src/extlib")
 
+add_subdirectory(thirdparty/miniz)
+
 add_library(${TARGET_NAME} SHARED)
+
+target_link_libraries(${TARGET_NAME} PRIVATE miniz)
 
 add_subdirectory("./src/extlib")
 
